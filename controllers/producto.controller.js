@@ -38,6 +38,17 @@ module.exports.findByMarca = async (req, res) => {
     }
 };
 
+//Funcion que busca los productos por categoria
+
+module.exports.findProductByCategory = async (req, res) => {
+    try {
+        const product = await Product.findOne({category:req.params.id}).populate('category');
+        //console.log("buscando", req.params.id);
+        res.status(200).json(product)
+    } catch (error) {
+        res.status(500).json(error);
+    }
+};
 //Función para guardar un producto
 module.exports.createProduct = async (req, res) => {
    try {
