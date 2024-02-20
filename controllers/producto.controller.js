@@ -31,6 +31,7 @@ module.exports.findProduct = async (req, res) => {
 //Función que busca y filtra los productos por marca
 module.exports.findByMarca = async (req, res) => {
     try {
+        console.log(req.params.marca);
         const product = await Product.find({marca: req.params.marca}).populate('category');
         res.status(200).json(product)
     } catch (error) {
