@@ -110,7 +110,7 @@ module.exports.login = async (req, res) => {
 
         res.cookie("userToken", newJWT, { httpOnly: true });
         res.status(200);
-        res.json({ user, acessToken:newJWT });
+        res.json({ user, accessToken:newJWT });
     }
 
     catch (error) {
