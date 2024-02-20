@@ -42,7 +42,7 @@ module.exports.findByMarca = async (req, res) => {
 
 module.exports.findProductByCategory = async (req, res) => {
     try {
-        const product = await Product.findOne({category:req.params.id}).populate('category');
+        const product = await Product.find({category:req.params.id}).populate('category');
         //console.log("buscando", req.params.id);
         res.status(200).json(product)
     } catch (error) {
