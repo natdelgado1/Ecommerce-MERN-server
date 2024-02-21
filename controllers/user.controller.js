@@ -13,8 +13,8 @@ const secretKey = process.env.JWT_SECRET_KEY;
 module.exports.createUser = async (req, res) => {
     try {
         const newUser = await User.create(req.body);
-        // const emailResponse = await sendConfirmationEmail(req.body);
-        // console.log(emailResponse);
+        const emailResponse = await sendConfirmationEmail(req.body);
+        console.log(emailResponse);
         res.status(200);
         res.json(newUser);
     } catch (error) {

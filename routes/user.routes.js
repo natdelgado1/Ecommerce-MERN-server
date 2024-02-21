@@ -13,8 +13,8 @@ router.patch("/passwordReset", userController.passwordReset);
 router.post("", userController.createUser);
 router.get("", authenticate, userController.findAllUsers);
 router.get("/:id", authenticate, userController.findUser);
-router.put("/:id", authenticate, userController.updateUser);
-router.delete("/:id", authenticate, userController.deleteUser);
+router.put("/:id", userController.updateUser);
+router.delete("/:id",  userController.deleteUser);
 
 
 

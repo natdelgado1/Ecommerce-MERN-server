@@ -12,7 +12,7 @@ router.get("/lanzamientos", ProductController.findLanzamientos);
 // //Find One
 router.get("/:id", ProductController.findProduct);
 //Find All marcas
-router.get("/:marca", ProductController.findByMarca);
+router.get("/marcas/:marca", ProductController.findByMarca);
 //Find All category
 router.get("/category/:id", ProductController.findProductByCategory);
 // //Delete One
